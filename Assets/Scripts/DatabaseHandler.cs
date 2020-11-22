@@ -4,8 +4,8 @@ using Proyecto26;
 
 public static class DatabaseHandler
 {
-    private const string projectId = "nico-the-weather"; // You can find this in your Firebase project settings
-    private static readonly string databaseURL = $"https://{projectId}.firebaseio.com/";
+    private const string projectId = "GameOff2020"; // You can find this in your Firebase project settings
+    private static readonly string databaseURL = $"https://gameoff2020-fe105.firebaseio.com/";
     
     private static fsSerializer serializer = new fsSerializer();
 
@@ -44,6 +44,7 @@ public static class DatabaseHandler
         RestClient.Get($"{databaseURL}users.json").Then(response =>
         {
             var responseJson = response.Text;
+            //UnityEngine.Debug.Log("response : " + response);
 
             // Using the FullSerializer library: https://github.com/jacobdufault/fullserializer
             // to serialize more complex types (a Dictionary, in this case)
